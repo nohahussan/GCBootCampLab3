@@ -1,25 +1,25 @@
 ﻿using System;
-
 namespace Lab3
 {
     class MainClass
     {
         public static void Main(string[] args)
         {
-
             Boolean even = false;
             Boolean odd = false;
-
             int userInput;
-
-
 
             //Ask the user to enter his/her name
             Console.WriteLine("Hello please enter your name : ");
             //read the user input and store it in userName
              string userName = Console.ReadLine();
-            checking();
 
+            checking();//calling checking method
+           /*
+            * create checking method to check if the user input an valid number
+            * if not the method will be called recursvely 
+            *   initial odd and even variable dependent on the user input         
+            */
            void checking ()
             {
                     // ask the user to enter integer between 1 and 100
@@ -33,14 +33,12 @@ namespace Lab3
 
                             checking();
                      }
-             
                    // initial even and odd
                          if(userInput%2 == 0)
                         {
                              even =  true;
                              odd = false;
                         }
-
                         else
                         {
                              odd = true;
@@ -53,13 +51,11 @@ namespace Lab3
             //method that formate the output message
             void formate ()
             {
-
                     if (odd)
                     {
 
                         print(userInput, "Odd");
                     }
-
                     else if(even)
                     {
                             if (userInput >= 2 && userInput < 25)
@@ -77,15 +73,11 @@ namespace Lab3
                     }
             }
            
-
             //method to output the result
              void print (int number ,  string numbertype)
             {
-
                 Console.WriteLine(number + " and " + numbertype);
-
             }
-
             // method to ask the user if he like to continue
             void contunue ()
             {
@@ -101,10 +93,7 @@ namespace Lab3
                         return;//exit the program
                     
                     }
-
             }
-
-
         }
     }
 }
